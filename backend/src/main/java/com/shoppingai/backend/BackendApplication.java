@@ -2,6 +2,8 @@ package com.shoppingai.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class BackendApplication {
@@ -10,4 +12,9 @@ public class BackendApplication {
         SpringApplication.run(BackendApplication.class, args);
     }
 
+    // Bu nesne, bizim yerimize Google/Gemini API'sine istek atacak araçtır.
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }
